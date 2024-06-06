@@ -3,6 +3,7 @@ from TextSummarizer.pipeline.N_01_data_ingestion import DataIngestionPipeline
 from TextSummarizer.pipeline.N_02_data_checking import DataCheckingPipeline
 from TextSummarizer.pipeline.N_03_data_transformation import DataTransformationPipeline
 from TextSummarizer.pipeline.N_04_model_training import ModelTrainingPipeline
+from TextSummarizer.pipeline.N_05_model_evaluation import ModelEvaluationPipeline
 # logger.info("TextSummarizer is running...") 
 
 
@@ -33,3 +34,9 @@ model_training_pipeline = ModelTrainingPipeline()
 model_training_pipeline.run()
 logger.info(f"{CURRENT_STAGE} Completed")
 
+
+CURRENT_STAGE = "Model Evaluation"
+logger.info(f"{CURRENT_STAGE} Started")
+model_evaluation_pipeline = ModelEvaluationPipeline()
+model_evaluation_pipeline.run()
+logger.info(f"{CURRENT_STAGE} Completed")

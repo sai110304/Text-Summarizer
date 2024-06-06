@@ -36,3 +36,13 @@ class modelTrainingEntity:
     eval_steps: int
     save_steps: int
     gradient_accumulation_steps: int
+    
+
+@dataclass(frozen=True)
+class modelEvaluationEntity:
+    root: Path
+    data_dir: Path
+    model_path: Path
+    tokenizer_path: Path
+    metric_file: Path
+    

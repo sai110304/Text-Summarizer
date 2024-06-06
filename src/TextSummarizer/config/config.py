@@ -1,6 +1,6 @@
 from TextSummarizer.constants import *
 from TextSummarizer.utils.common import read_yaml,create_directories
-from TextSummarizer.entity import dataIngestionEntity, dataCheckingEntity, dataTransformationEntity , modelTrainingEntity
+from TextSummarizer.entity import dataIngestionEntity, dataCheckingEntity, dataTransformationEntity , modelTrainingEntity , modelEvaluationEntity
 
 class ConfigManager:
     def __init__(self,config_path=CONFIG_PATH, param_path=PARAM_PATH):
@@ -75,3 +75,19 @@ class ConfigManager:
         )
         
         return model_training_config
+    
+
+    def get_modelEvaluation_config(self) -> modelEvaluationEntity:
+        config=self.config.model_evaluation
+        
+        create_directories([config.root])
+        
+        model_evaluation_config=modelEvaluationEntity(
+            root=config.root,
+            data_dir=config.data_dir,
+            model_path=config.model_path,
+            tokenizer_path=config.tokenizer_path,
+            metric_file=config.metric_file
+        )
+        
+        return model_evaluation_config
