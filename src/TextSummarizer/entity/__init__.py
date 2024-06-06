@@ -14,3 +14,9 @@ class dataCheckingEntity:
     root: Path
     status_file: str
     required_files: list
+    
+@dataclass(frozen=True)
+class dataTransformationEntity:
+    root: Path
+    data_dir: Path
+    tokenizer_name: Path
