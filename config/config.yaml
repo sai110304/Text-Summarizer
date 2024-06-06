@@ -6,3 +6,9 @@ data_ingestion:
   file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
 
+
+data_checking:
+  root: artifacts/data_checking
+  status_file: artifacts/data_checking/status.txt
+  required_files: ["train", "test", "validation"]
+
