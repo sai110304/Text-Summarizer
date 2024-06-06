@@ -17,3 +17,9 @@ data_transformation:
   root: artifacts/data_transformation
   data_dir: artifacts/data_ingestion/samsum_dataset
   tokenizer_name: google/pegasus-cnn_dailymail
+
+
+model_training:
+  root: artifacts/model_training
+  data_dir: artifacts/data_transformation/samsum_dataset
+  model_ckpt: google/pegasus-cnn_dailymail

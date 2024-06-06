@@ -20,3 +20,19 @@ class dataTransformationEntity:
     root: Path
     data_dir: Path
     tokenizer_name: Path
+    
+    
+@dataclass(frozen=True)
+class modelTrainingEntity:
+    root: Path
+    data_dir: Path
+    model_ckpt: Path
+    num_train_epochs: int
+    warmup_steps: int
+    per_device_train_batch_size: int
+    weight_decay: float
+    logging_steps: int
+    evaluation_strategy: str
+    eval_steps: int
+    save_steps: int
+    gradient_accumulation_steps: int
